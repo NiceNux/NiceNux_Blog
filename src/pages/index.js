@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import { graphql, StaticQuery } from "gatsby"
 import Post from '../components/Post'
 import { Row, Col } from 'reactstrap'
+import Sidebar from "../components/Sidebar"
 
 const IndexPage = () => (
   <Layout>
@@ -21,6 +22,7 @@ const IndexPage = () => (
               date={node.frontmatter.date}
               body={node.excerpt}
               fluid={node.frontmatter.image.childImageSharp.fluid}
+              tags={node.frontmatter.tags}
             />
           ))}
         </div>
@@ -28,7 +30,7 @@ const IndexPage = () => (
     }}/>
       </Col>
       <Col md="4">
-        <div style={{width: "100%", height: "100%", backgroundColor: "grey"}}/>
+        <Sidebar/>
       </Col>
     </Row>
   </Layout>
@@ -45,6 +47,7 @@ query{
           date(formatString: "MMM Do YYYY" )
           author
           path
+          tags
           image{
             childImageSharp{
               fluid(maxWidth: 600){
