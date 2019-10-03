@@ -65,21 +65,21 @@ const Sidebar = () =>(
 )
 
 const sidebarQuery = graphql`
-    query sidebarQuery {
-        allMarkdownRemark(
-            sort: { fields: [frontmatter___date], order: DESC}
-            limit: 3
-        ) {
-            edges{
-                node{
-                    id
-                    frontmatter{
-                        title
-                        path
-                        image{
-                            childImageSharp{
-                                fluid(maxWidth: 300){
-                                    ...GatsbyImageSharpFluid
+query sidebarQuery {
+    allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: DESC}
+        limit: 3
+    ) {
+        edges{
+            node{
+                id
+                frontmatter{
+                    title
+                    path
+                    image{
+                        childImageSharp{
+                            fluid(maxWidth: 300){
+                                ...GatsbyImageSharpFluid
                                 }
                             }
                         }
