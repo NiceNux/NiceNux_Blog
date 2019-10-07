@@ -49,3 +49,4 @@ exports.createPages = ({ actions, graphql }) => {
         })
     })
 }
+
