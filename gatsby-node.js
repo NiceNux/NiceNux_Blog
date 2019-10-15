@@ -15,7 +15,7 @@ exports.onCreateNode = ({node, actions}) => {
 
 exports.createPages = ({ actions, graphql }) => {
     const { createPage } = actions;
-    const singlePostTempalte = path.resolve('src/templates/single-post.js')
+    const singlePostTemplate = path.resolve('src/templates/single-post.js')
 
     return graphql(`
         {
@@ -41,7 +41,7 @@ exports.createPages = ({ actions, graphql }) => {
         posts.forEach(({node}) => {
             createPage({
                 path: node.fields.slug,
-                component: singlePostTempalte,
+                component: singlePostTemplate,
                 context: {
                     slug: node.fields.slug
                 }
