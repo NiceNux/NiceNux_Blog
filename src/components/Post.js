@@ -1,18 +1,19 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import { Link } from 'gatsby'
 import {Badge, Card, CardTitle, CardText, CardSubtitle, CardBody } from 'reactstrap'
-// import Img from 'gatsby-image'
+import Img from 'gatsby-image'
 import { slugify } from '../util/utilityFunctions'
 
 const Post = ({ title, author, slug, date, body, fluid, tags }) => {
     return(
         <Card>
-            {/* <Link to={slug}>
-                <Img className="card-iamge-top" fluid={fluid} />
-            </Link> */}
             <CardBody>
+                <Link to={`/blogpost/${slug}/`}>
+                    <Img className="card-image-top" fluid={fluid} />
+                </Link>
                 <CardTitle>
-                    <Link to={slug}>
+                    <Link to={`/blogpost/${slug}/`}>
                     {title}
                     </Link>
                 </CardTitle>
@@ -32,7 +33,7 @@ const Post = ({ title, author, slug, date, body, fluid, tags }) => {
                         </li>
                     ))}
                 </ul>
-                <Link to={slug} className="btn btn-outline-primary float-right"> Read More </Link>
+                <Link to={`/blogpost/${slug}/`} className="btn btn-outline-primary float-right"> Read More </Link>
             </CardBody>
         </Card>
     )

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -19,8 +20,8 @@ const IndexPage = () => (
               author={node.author}
               slug={node.slug}
               date={node.date}
-              body={node.desc}
-              // fluid={node.image.childImageSharp.fluid}
+              body={node.desc.desc}
+              fluid={node.image.fluid}
               tags={node.tags}
             />
           ))}
@@ -44,21 +45,17 @@ query BlogPostsPageQuery {
           desc
         }
         slug
-        body {
-          body
+        image {
+          fluid(maxWidth: 600) {
+            ...GatsbyContentfulFluid
+          }
         }
       }
     }
   }
 }
 `
-// image{
-//   childImageSharp{
-//     fluid(maxWidth: 600){
-//       ...GatsbyImageSharpFluid
-//     }
-//   }
-// }
+
 // fields{
 //   slug
 // }

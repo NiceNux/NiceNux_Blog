@@ -1,4 +1,5 @@
-const { slugify } = require('./src/util/utilityFunctions')
+/* eslint-disable no-undef */
+// import { slugify } from './src/util/utilityFunctions'
 const path = require(`path`);
 const slash = require(`slash`);
 exports.createPages = ({ graphql, actions }) => {
@@ -29,7 +30,7 @@ exports.createPages = ({ graphql, actions }) => {
           path: `/blogpost/${edge.node.slug}/`,
           component: slash(blogPostTemplate),
           context: {
-	    slug: edge.node.slug,
+	          slug: edge.node.slug,
             id: edge.node.id
           }
         });
