@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import {Badge, Card, CardTitle, CardText, CardSubtitle, CardBody } from 'reactstrap'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 import { slugify } from '../util/utilityFunctions'
 
 const Post = ({ title, author, slug, date, body, fluid, tags }) => {
     return(
         <Card>
-            <Link to={slug}>
+            {/* <Link to={slug}>
                 <Img className="card-iamge-top" fluid={fluid} />
-            </Link>
+            </Link> */}
             <CardBody>
                 <CardTitle>
                     <Link to={slug}>

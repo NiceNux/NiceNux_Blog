@@ -17,6 +17,7 @@
     "gatsby-plugin-sass": "^2.1.17",
     "gatsby-plugin-sharp": "^2.2.27",
     "gatsby-react-router-scroll": "^2.1.11",
+    "gatsby-source-contentful": "^2.1.49",
     "gatsby-source-filesystem": "^2.1.28",
     "gatsby-transformer-remark": "^2.6.26",
     "gatsby-transformer-sharp": "^2.2.19",

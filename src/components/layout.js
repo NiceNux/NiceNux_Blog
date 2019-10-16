@@ -13,7 +13,7 @@ import Header from "./header"
 import '../styles/index.scss'
 import { Helmet } from "react-helmet"
 import { Row, Col } from "reactstrap"
-import Sidebar from './Sidebar'
+// import Sidebar from './Sidebar'
 
 const Layout = ({ children, pageTitle }) => {
   const data = useStaticQuery(graphql`
@@ -38,7 +38,7 @@ const Layout = ({ children, pageTitle }) => {
           <Col md="8">
             {children}
           </Col>
-          <Col md="4"><Sidebar/></Col>
+          {/* <Col md="4"><Sidebar/></Col> */}
         </Row>
       </div>
       <Footer />

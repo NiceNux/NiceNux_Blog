@@ -2,7 +2,7 @@
 title: 'Are serverless functions right for you?'
 date: 2019-10-15 00:00:00
 author: 'Drew MacLean'
-image: '../../images/cloud-serverless-1280x595.png'
+# image: '../../images/cloud-serverless-1280x595.png'
 desc: 'Serverless compute power offers many advantages over traditional server infrastructure. In this article we’ll look at some of those advantages and examine if they are right for your product.'
 tags:
 - 'Serverless'

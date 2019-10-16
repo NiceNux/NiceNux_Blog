@@ -12,16 +12,16 @@ const IndexPage = () => (
       <StaticQuery query={indexQuery} render={data => {
       return (
         <div>
-          {data.allMarkdownRemark.edges.map(({ node }) =>(
+          {data.allContentfulBlogPost.edges.map(({ node }) =>(
             <Post
               key={node.id} 
-              title={node.frontmatter.title}
-              author={node.frontmatter.author}
-              slug={node.fields.slug}
-              date={node.frontmatter.date}
-              body={node.frontmatter.desc}
-              fluid={node.frontmatter.image.childImageSharp.fluid}
-              tags={node.frontmatter.tags}
+              title={node.title}
+              author={node.author}
+              slug={node.slug}
+              date={node.date}
+              body={node.desc}
+              // fluid={node.image.childImageSharp.fluid}
+              tags={node.tags}
             />
           ))}
         </div>
@@ -31,32 +31,37 @@ const IndexPage = () => (
 )
 
 const indexQuery = graphql`
-query{
-  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+query BlogPostsPageQuery {
+  allContentfulBlogPost(limit: 1000) {
     edges{
       node{
         id
-        frontmatter{
-          title
-          date(formatString: "MMM Do YYYY" )
-          author
-          tags
+        title
+        date(formatString: "MMM Do YYYY" )
+        author
+        tags
+        desc {
           desc
-          image{
-            childImageSharp{
-              fluid(maxWidth: 600){
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
         }
-        fields{
-          slug
+        slug
+        body {
+          body
         }
-        excerpt
       }
     }
   }
 }
 `
+// image{
+//   childImageSharp{
+//     fluid(maxWidth: 600){
+//       ...GatsbyImageSharpFluid
+//     }
+//   }
+// }
+// fields{
+//   slug
+// }
+// excerpt
+
 export default IndexPage
